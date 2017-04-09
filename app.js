@@ -28,6 +28,7 @@ class App {
         this.club = document.querySelector('#club')
         this.diamond = document.querySelector('#diamond')
         this.decksPopup = document.querySelector('#decks')
+        this.showDecksPopup = document.querySelector('#show-decks-popup')
     }
 
     static app() {
@@ -35,9 +36,19 @@ class App {
         fetch('decks.json').then(responce => responce.json()).then(decks => this.updateDecks(decks))
 
         document.body.addEventListener('click', e => {
-            if (!e.target.classList.contains('use-deck')) { return }
-            this.use(parseInt(e.target.getAttribute('data-deck-index')))
-            this.decksPopup.classList.remove('active')
+            if (e.target.classList.contains('use-deck')) {
+                this.use(parseInt(e.target.getAttribute('data-deck-index')))
+                this.decksPopup.classList.remove('active')
+            }
+
+            if (e.target.classList.contains('close')
+                && e.target.parentNode.parentNode.classList.contains('popup')) {
+                e.target.parentNode.parentNode.classList.remove('active')
+            }
+        })
+
+        this.showDecksPopup.addEventListener('click', e => {
+            this.decksPopup.classList.add('active')
         })
 
     }

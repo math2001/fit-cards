@@ -4,6 +4,8 @@
 </head>
 <body>
 
+    <button id="show-decks-popup">Show preset decks</button>
+
     <table class="symbols">
         <tr>
             <td><img src="imgs/heart.svg">
@@ -23,26 +25,24 @@
         </tr>
     </table>
 
-    <section class="popup-bg active" id="decks">
-        <div class="popup">
-            <h1>Fit cards</h1>
-            <p>Choose a type of deck, or create your own!</p>
-            <table class="groups">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th><img src="imgs/heart.svg"></th>
-                        <th><img src="imgs/spade.svg"></th>
-                        <th><img src="imgs/diamond.svg"></th>
-                        <th><img src="imgs/club.svg"></th>
-                        <th>Active?</th>
-                    </tr>
-                </thead>
-                <tbody id="groups"></tbody>
-            </table>
-            <p class="signature">Made with &hearts; by <a target="_blank" href="https://math2001.github.io">@math2001</a></p>
-        </div>
-    </section>
+    <div class="popup" id="decks">
+        <h1>Fit cards <span class="close">&times;</span></h1>
+        <p>Choose a type of deck, or create your own!</p>
+        <table class="groups">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th><img src="imgs/heart.svg"></th>
+                    <th><img src="imgs/spade.svg"></th>
+                    <th><img src="imgs/diamond.svg"></th>
+                    <th><img src="imgs/club.svg"></th>
+                    <th>Active?</th>
+                </tr>
+            </thead>
+            <tbody id="groups"></tbody>
+        </table>
+        <p class="signature">Made with &hearts; by <a target="_blank" href="https://math2001.github.io">@math2001</a></p>
+    </div>
 
     <script type="text/javascript" src="app.js"></script>
 

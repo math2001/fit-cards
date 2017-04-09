@@ -8,6 +8,7 @@ body {
     color: #333;
     background-color: #efefef;
     font-family: "Droid Sans";
+    perspective: 800px;
 }
 
 h1 {
@@ -52,10 +53,15 @@ button:hover {
 }
 
 .symbols {
+    margin: 0;
     font-family: Roboto, sans-serif;
     width: 100%;
     height: 100%;
     border-collapse: collapse;
+}
+
+.symbols tr {
+    border: none;
 }
 
 .symbols td {
@@ -96,22 +102,46 @@ button:hover {
     vertical-align: middle;
 }
 
-.popup-bg.active {
+.popup-bg {
     position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity .5s;
     background-color: rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    transform: scale(0);
 }
 
 .popup {
+    --animation-duration: .3s;
+    position: fixed;
+    left: 50%;
     background-color: #fff;
     width: 50%;
     margin: auto;
     padding: 10px;
-    margin-top: 20px;
-    box-shadow: 0 0 20px #333;
+    box-shadow: 0 0 50px #333;
+    transform-origin: 0 20px;
+    top: -40px;
+    transition: all var(--animation-duration);
+    opacity: 0;
+    transform: translateX(-50%) rotateX(-107deg);
+}
+
+.popup.active {
+    top: 20px;
+    opacity: 1;
+    transform: translateX(-50%);
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    cursor: pointer;
 }
 
 .signature {
@@ -120,4 +150,30 @@ button:hover {
 
 .signature a {
     color: black;
+}
+
+@keyframes show-popup {
+
+    from {
+        opacity: 0;
+        transform: translateX(-50%) rotateX(-107deg);
+    }
+    to {
+        transform: translateX(-50%);
+        opacity: 1;
+    }
+
+}
+
+@keyframes hide-popup {
+
+    from {
+        transform: translateX(-50%);
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-50%) rotateX(-107deg);
+    }
+
 }
