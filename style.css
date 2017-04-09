@@ -1,0 +1,110 @@
+* {
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: #333;
+    background-color: #efefef;
+    font-family: "Droid Sans";
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    /* border: 1px solid #aaa; */
+}
+
+td, th {
+    padding: 5px;
+    text-align: center;
+}
+
+tr {
+    border-top: 1px solid #ddd;
+}
+
+thead tr {
+    border: none;
+}
+
+
+thead img {
+    width: 20px;
+}
+
+
+.symbols {
+    font-family: Roboto, sans-serif;
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+
+.symbols td {
+    width: 50%;
+    height: 50%;
+    padding: 10px;
+    text-align: center;
+    font-size: 7vw;
+}
+
+.symbols img {
+    width: 20vw;
+    max-height: 13vh;
+    display: block;
+    margin: auto;
+}
+
+.symbols textarea {
+    background: none;
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    resize: none;
+}
+
+.activity-name {
+    min-height: 1rem;
+    min-width: 10px;
+    display: block;
+}
+
+.activity-name:empty::before {
+    content: "...";
+    color: #888;
+    vertical-align: middle;
+}
+
+.popup-bg.active {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup {
+    background-color: #fff;
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+    margin-top: 20px;
+    box-shadow: 0 0 20px #333;
+}
+
+.signature {
+    text-align: center;
+}
+
+.signature a {
+    color: black;
+}

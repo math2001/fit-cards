@@ -1,0 +1,50 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <table class="symbols">
+        <tr>
+            <td><img src="imgs/heart.svg">
+                <span class="activity-name" contentEditable>Push ups</span>
+            </td>
+            <td><img src="imgs/spade.svg">
+                <span class="activity-name" contentEditable>Dips</span>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="imgs/club.svg">
+                <span class="activity-name" contentEditable>Lunges</span>
+            </td>
+            <td><img src="imgs/diamond.svg">
+                <span class="activity-name" contentEditable>Bicycle crunches</span>
+            </td>
+        </tr>
+    </table>
+
+    <section class="popup-bg active">
+        <div class="popup">
+            <h1>Fit cards</h1>
+            <p>Choose a type of deck, or create your own!</p>
+            <table class="groups">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th><img src="imgs/diamond.svg"></th>
+                        <th><img src="imgs/spade.svg"></th>
+                        <th><img src="imgs/heart.svg"></th>
+                        <th><img src="imgs/club.svg"></th>
+                        <th>Active?</th>
+                    </tr>
+                </thead>
+                <tbody id="groups"></tbody>
+            </table>
+            <p class="signature">Made with &hearts; by <a target="_blank" href="https://math2001.github.io">@math2001</a></p>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="app.js"></script>
+
+</body>
+</html>
