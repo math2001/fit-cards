@@ -41,7 +41,7 @@ button {
     border: none;
     color: white;
     background: none;
-    background-color: #86de5f ;
+    background-color: #aaa;
     padding: 8px;
     font-family: inherit;
     border-radius: 5px;
@@ -49,6 +49,13 @@ button {
 }
 
 button:hover {
+    background-color: #bbb;
+}
+
+button.green {
+    background-color: #86de5f ;
+}
+button.green:hover {
     background-color: #a2e684;
 }
 
@@ -125,16 +132,18 @@ button:hover {
     padding: 10px;
     box-shadow: 0 0 50px #333;
     transform-origin: 0 20px;
-    top: -40px;
+    top: 0;
     transition: all var(--animation-duration);
     opacity: 0;
     transform: translateX(-50%) rotateX(-107deg);
+    z-index: -5;
 }
 
 .popup.active {
     top: 20px;
     opacity: 1;
     transform: translateX(-50%);
+    z-index: 10;
 }
 
 .close {
@@ -150,6 +159,19 @@ button:hover {
 
 .signature a {
     color: black;
+}
+
+.fix-top {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom-left-radius: 30px 50px;
+    border-bottom-right-radius: 30px 50px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 @keyframes show-popup {

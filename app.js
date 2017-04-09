@@ -10,7 +10,7 @@ class App {
             deck.some((item) => {
                 html += `<td>${item}</td>`
             })
-            html += `<td><button class="use-deck" data-deck-index="${index}">Use!</button></td>`
+            html += `<td><button class="use-deck green" data-deck-index="${index}">Use!</button></td>`
             html += `</tr>`
         })
         document.querySelector('#groups').innerHTML = html
