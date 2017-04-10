@@ -9,6 +9,9 @@ body {
     background-color: #efefef;
     font-family: "Droid Sans";
     perspective: 800px;
+    transition: all .5s;
+} body.reversed {
+    transform: scaleX(-1);
 }
 
 h1 {
@@ -47,17 +50,24 @@ button {
     font-family: inherit;
     border-radius: 5px;
     cursor: pointer;
-}
-
-button:hover {
+} button:hover {
     background-color: #bbb;
 }
 
 button.green {
     background-color: #86de5f ;
-}
-button.green:hover {
+} button.green:hover {
     background-color: #a2e684;
+}
+
+button.blue {
+    background-color: #6bb8ec;
+} button.blue:hover {
+    background-color: #8CC7F0;
+}
+
+button svg {
+    height: 12px;
 }
 
 .symbols {
@@ -166,6 +176,9 @@ button.green:hover {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.fix-top button {
     border-bottom-left-radius: 30px 50px;
     border-bottom-right-radius: 30px 50px;
     border-top-left-radius: 0;

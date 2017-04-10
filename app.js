@@ -29,6 +29,7 @@ class App {
         this.diamond = document.querySelector('#diamond')
         this.decksPopup = document.querySelector('#decks')
         this.showDecksPopup = document.querySelector('#show-decks-popup')
+        this.reverseViewButton = document.querySelector('#reverse-view')
     }
 
     static app() {
@@ -45,6 +46,11 @@ class App {
                 && e.target.parentNode.parentNode.classList.contains('popup')) {
                 e.target.parentNode.parentNode.classList.remove('active')
             }
+
+        })
+
+        this.reverseViewButton.addEventListener('click', () => {
+            document.body.classList.toggle('reversed')
         })
 
         this.showDecksPopup.addEventListener('click', e => {
