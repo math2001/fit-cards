@@ -62,3 +62,17 @@ class App {
 }
 
 App.app()
+
+// register service worker
+
+if ('serviceWorker' in navigator) {
+
+    window.addEventListener('load', _ => {
+        navigator.serviceWorker.register('sw.js').catch(err => {
+            console.error('Failed to register!', err)
+        })
+    })
+
+} else {
+    alert("You're browser doesn't support service workers → it won't work offline")
+}
