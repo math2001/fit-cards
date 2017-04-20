@@ -2,17 +2,17 @@
 
 const CACHE_NAME = 'fit-cards-math2001'
 const URLS_TO_CACHE = [
-    '/',
-    '/decks.json',
-    '/app.js',
-    '/style.css',
-    '/index.html',
-    '/imgs/club.svg',
-    '/imgs/diamond.svg',
-    '/imgs/favicon.png',
-    '/imgs/heart.svg',
-    '/imgs/mirror.svg',
-    '/imgs/spade.svg'
+    '.',
+    'decks.json',
+    'app.js',
+    'style.css',
+    'index.html',
+    'imgs/club.svg',
+    'imgs/diamond.svg',
+    'imgs/favicon.png',
+    'imgs/heart.svg',
+    'imgs/mirror.svg',
+    'imgs/spade.svg'
 ]
 
 self.addEventListener('install', e => {
@@ -32,7 +32,7 @@ self.addEventListener('fetch', e => {
     if (request.method !== 'GET') {
         return
     }
-    
+
     e.respondWith(fetch(request).then(response => {
         caches.open(CACHE_NAME).then(cache => {
             cache.put(request, response)
